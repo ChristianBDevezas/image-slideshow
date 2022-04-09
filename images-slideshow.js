@@ -2,8 +2,9 @@ const slideshow = document.querySelector('.slider__slideshow');
 const images = document.querySelectorAll('.slideshow-link img');
 const totalImages = images.length;
 const names = document.querySelectorAll(".slideshow-link h4");
-const nextButton = document.querySelector(".slider__btn button");
 let index = 2;
+const percent = document.querySelector(".show-percent");
+let counter = 5;
 
 const removeImage = () => {
     names.forEach((name) => name.classList.remove("current-txt"));
@@ -30,21 +31,20 @@ const changeImage = (idx) => {
     slideshow.appendChild(firstIcon);
 }
 
-let intervalImage = setInterval(showImage, 3700);
+let intervalImage = setInterval(showImage, 5000);
 
 function showImage() {
     index++;
     removeImage();
     checkCurrentImage();
-    changeImage(index);
+    changeImage(index);    
 }
 
-nextButton.addEventListener("click", () => {
-    clearInterval(intervalImage);
-        removeImage();
-        index++;
-
-        checkCurrentImage();
-        changeImage(index);
-        intervalImage = setInterval(showImage, 3700);
-});
+percent.textContent = `${counter}`;
+setInterval(() => {
+    counter--;
+    if(counter <= 0) {
+        counter = 5;
+    }
+    percent.textContent = `${counter}`;
+}, 1000);

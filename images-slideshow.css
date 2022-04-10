@@ -213,6 +213,16 @@ h4.current-txt {
         bottom: -3px;
         left: 4px;
     }
+
+    .slider__progress {
+        height: 28px;
+        width: 140px;
+        margin-top: calc(.9rem + .7vw);
+    }
+
+    .slider__progress__done {
+        font-size: 16px;
+    }
 }
 
 @media(max-width: 420px) {

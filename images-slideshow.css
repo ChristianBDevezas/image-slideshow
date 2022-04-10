@@ -95,34 +95,41 @@ h4.current-txt {
 }
 
 /* Progress Bar */
-/* .slider__progress {
-  background-color: #d8d8d8;
+.slider__progress {
+  background-color: #bdb8b8;
+  box-shadow: 0 0 0 2px white, 0 2px 35px rgba(100, 100, 100, .5);
   border-radius: 20px;
-  height: 28px;
+  height: 35px;
   width: 200px;
   margin: 0 auto;
   margin-top: calc(1.3rem + .7vw);
-} */
+}
 
 .slider__progress__done {
-    height: 35px;
-    margin: 0 auto;
-    margin-top: calc(1.3rem + .7vw);
+    height: 100%;
     border-radius: 20px;
-    box-shadow: 0 0 0 2px white, 0 2px 35px rgba(100, 100, 100, .5);
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    font-size: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 10%;
+    background-color: #d40000;
     animation: change-color 5s infinite;
+    transition: all 5s;
 }
 
 @keyframes change-color {
-    0% {background-color: #579ad8; width: 200px;}
-    40% {background-color: #2574b1; }
-    55% {background-color: #f24e4e; }
-    100% {background-color: #b90505; width: 35px;}
+    0% {
+        width: 10%;
+        background-color: #ee9595;
+        opacity: .4;
+    }
+    100% {
+        width: 100%;
+        background-color: #d40000;
+        opacity: 1;
+    }
 }
 
 .show-percent {

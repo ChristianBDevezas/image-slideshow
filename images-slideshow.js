@@ -4,7 +4,7 @@ const totalImages = images.length;
 const names = document.querySelectorAll(".slideshow-link h4");
 let index = 2;
 const percent = document.querySelector(".show-percent");
-let counter = 5;
+let counter = 4;
 
 const removeImage = () => {
     names.forEach((name) => name.classList.remove("current-txt"));
@@ -43,8 +43,8 @@ function showImage() {
 percent.textContent = `${counter}`;
 setInterval(() => {
     counter--;
-    if(counter <= 0) {
-        counter = 5;
+    if(counter < 0) {
+        counter = 4;
     }
     percent.textContent = `${counter}`;
 }, 1000);
